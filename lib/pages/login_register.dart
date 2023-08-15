@@ -39,11 +39,9 @@ class _LoginPageState extends State<LoginPage> {
           );
         },
       );
-
-      // pop loading circle jika selesai sign in
       if (mounted) {
         Navigator.pop(context);
-      }
+      } else if (!mounted) return;
     } on FirebaseAuthException catch (e) {
       // WRONG EMAIL
       if (e.code == 'user-not-found') {
@@ -182,9 +180,9 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 30),
 
                 // google  + apple sign in button
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     // google button
                     SquareTile(imagePath: 'assets/img/google.png'),
                     SizedBox(

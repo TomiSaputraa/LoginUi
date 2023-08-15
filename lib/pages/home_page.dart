@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Text(
           "Berhasil login sebagai " + user!.email.toString(),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
           ),
         ),
